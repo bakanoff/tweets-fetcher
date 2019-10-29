@@ -41,6 +41,7 @@ gem 'jquery-rails'
 gem 'twitter'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+gem 'dalli'
 
 
 # Use Capistrano for deployment
