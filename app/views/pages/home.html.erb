@@ -1,0 +1,31 @@
+<div class="card text-center">
+  <div class="card-header">
+    Tweets fetcher
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Enter some hashtag to try</h5>
+    <p class="card-text">It's really useless app for fetching tweets by hashtag</p>
+    <div class="input-group flex-nowrap">
+
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">#</span>
+      </div>
+
+      <div id="landing-search-input">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+               <%= form_with url: "/fetch", local: true, method: :get, html: { class: "form-inline" } do |form| %>
+                   <div class="row form-group">
+                      <div class="col-sm-8">
+                        <%= form.text_field :hashtag, placeholder: "hashtag", size: 40, data: { behavior: "autocomplete" }, 
+                        class: "form-control" %>
+                      </div>
+                      <div class="col-sm-4">
+                        <%= form.button "Search", :name => nil, class: "btn btn-outline-success form-control" %>
+                      </div>
+                    </div>
+               <% end %>
+           </div>
+        </div>
+    </div>
+</div>

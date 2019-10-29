@@ -30,8 +30,18 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'instagram_api_client'
 gem 'instagram'
+gem 'omniauth-instagram'
+gem 'omniauth-twitter'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'twitter'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
