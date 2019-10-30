@@ -17,7 +17,7 @@
                <%= form_with url: "/fetch", local: true, method: :get, html: { class: "form-inline" } do |form| %>
                    <div class="row form-group">
                       <div class="col-sm-8">
-                        <%= form.text_field :hashtag, placeholder: "hashtag", size: 40, data: { behavior: "autocomplete" }, 
+                        <%= form.text_field :hashtag, placeholder: "hashtag", required: true, size: 40, data: { behavior: "autocomplete" }, 
                         class: "form-control" %>
                       </div>
                       <div class="col-sm-4">

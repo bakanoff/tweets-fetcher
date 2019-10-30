@@ -9,13 +9,19 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="/">Home</a>
       <% if current_user %>
         <p class="navbar-text navbar-right"> Signed in as <%= current_user.name %></p>
         <a href="/logout" class="btn btn-outline-primary" role="button" aria-pressed="true">Log out</a>
       <% else %>
-        <a href="/auth/twitter" class="btn btn-outline-primary" role="button" aria-pressed="true">Log in via Twitte</a>
+        <a href="/auth/twitter" class="btn btn-outline-primary" role="button" aria-pressed="true">Log in via Twitter</a>
       <% end %>
     </nav>
     <%= yield %>

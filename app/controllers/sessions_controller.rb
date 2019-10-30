@@ -1,16 +1,19 @@
 class SessionsController < ApplicationController
   def create
-    @user = User.find_or_create_from_omniauth(auth_hash)
-    session[:user_id] = @user.id
-    redirect_to root_url, notice: "Signed in!"
+    if auth_hash
+      @user = User.find_or_create_from_omniauth(auth_hash)
+      session[:user_id] = @user.id
+      redirect_to root_url, notice: "Signed in!"
+    else
+      redirect_to root_url, alert: "Authentification failed!"
+    end
   end
 
   def destroy
     if current_user
       session.delete(:user_id)
-      flash[:success] = "Sucessfully logged out!"
     end
-    redirect_to root_url
+    redirect_to root_url, notice: "Sucessfully logged out!"
   end
 
   private
